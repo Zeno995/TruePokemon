@@ -48,16 +48,28 @@ struct NetworkService: NetworkProtocol {
       return Fail(error: NetworkError.invalidRequest).eraseToAnyPublisher()
     }
     
-    urlComponents.queryItems = request.queryItems
-    
     guard let url = urlComponents.url else {
       return Fail(error: NetworkError.invalidRequest).eraseToAnyPublisher()
     }
     
     var urlRequest = URLRequest(url: url)
     urlRequest.httpMethod = request.method.rawValue
-    urlRequest.httpBody = request.body
-        
+    switch request.method {
+    case .get, .delete:
+      urlComponents.queryItems = request.queryItems
+      
+    case .post, .put:
+      if let bodyData = request.body {
+        urlRequest.httpBody = bodyData
+      } else if let queryItems = request.queryItems {
+        var bodyComponents = URLComponents()
+        bodyComponents.queryItems = queryItems
+        urlRequest.httpBody = bodyComponents
+          .percentEncodedQuery?
+          .data(using: .utf8)
+      }
+    }
+    
     for (key, value) in request.headers {
       urlRequest.addValue(value, forHTTPHeaderField: key)
     }

@@ -17,4 +17,11 @@ public struct TruePokemonSDK {
       .mapError { _ in TruePokemonSDKError.unknown }
       .eraseToAnyPublisher()
   }
+  
+  public func getShakespeareTranslation(from text: String) -> AnyPublisher<Model.App.Shakespeare.Translate, TruePokemonSDKError> {
+    Networking.Service.Shakespeare(networkService: NetworkService())
+      .description(from: text)
+      .mapError { _ in TruePokemonSDKError.unknown }
+      .eraseToAnyPublisher()
+  }
 }

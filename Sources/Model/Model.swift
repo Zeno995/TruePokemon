@@ -12,3 +12,11 @@ public extension Model {
   
   enum Response {}
 }
+
+extension Model.Response {
+  enum Shakespeare {}
+}
+
+public extension Model.App {
+  enum Shakespeare {}
+}

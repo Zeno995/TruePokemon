@@ -14,3 +14,7 @@ public extension Networking {
 extension Networking.Service.Pokemon {
   enum Request {}
 }
+
+extension Networking.Service.Shakespeare {
+  enum Request {}
+}

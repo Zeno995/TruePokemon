@@ -23,6 +23,11 @@ public struct ContentView: View {
         layer.getDitto()
       }
       .padding()
+      
+      Button("Test shakespeare") {
+        layer.getShackespeareDitto()
+      }
+      .padding()
     }
   }
 }

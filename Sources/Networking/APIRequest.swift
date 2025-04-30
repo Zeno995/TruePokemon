@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// A protocol that defines prerequisites to make an `APIRequest`.
 protocol APIRequest {
   associatedtype Response: Decodable
   

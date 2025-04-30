@@ -8,6 +8,7 @@
 import Foundation
 
 public extension Model.App {
+  /// The pokémon model.
   struct Pokemon: Equatable {
     public let id: Int
     public let name: String

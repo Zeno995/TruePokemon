@@ -7,7 +7,7 @@
 
 import Combine
 
-/// A protocol defining network protocol capabilities
+/// A protocol defining network protocol capabilities.
 protocol NetworkProtocol {
   func perform<T: APIRequest>(_ request: T) -> AnyPublisher<T.Response, NetworkError>
 }

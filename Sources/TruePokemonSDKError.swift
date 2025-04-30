@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// The TruePokemonSDK errors.
 public enum TruePokemonSDKError: Error {
   case unknown
   

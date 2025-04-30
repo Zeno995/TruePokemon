@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// The service errors.
 enum ServiceError: Error {
   case network(NetworkError)
   case unknown
@@ -17,7 +18,7 @@ enum ServiceError: Error {
       return "Errore di rete: \(error.localizedDescription)"
       
     case .unknown:
-      return "Si è verificato un errore sconosciuto."
+      return "Errore generico"
     }
   }
 }

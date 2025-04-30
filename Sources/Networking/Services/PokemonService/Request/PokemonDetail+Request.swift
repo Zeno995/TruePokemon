@@ -8,6 +8,7 @@
 import Foundation
 
 extension Networking.Service.Pokemon.Request {
+  /// The request to retrive the pokémon detail from its name.
   struct Detail: PokemonApiRequest {
     typealias Response = Model.Response.Pokemon.Detail
     let name: String

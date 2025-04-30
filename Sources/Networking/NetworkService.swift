@@ -8,10 +8,29 @@
 import Combine
 import Foundation
 
-/// A service that handles network requests and response decoding
+/// A service responsible for executing HTTP requests and decoding JSON responses.
 ///
-/// This struct provides a clean interface for making HTTP requests and automatically
-/// decoding the responses into specified types.
+/// Usage example:
+/// ```swift
+/// let service = NetworkService()
+/// let publisher: AnyPublisher<MyResponseModel, NetworkError> =
+///     service.perform(MyAPIRequest(...))
+///
+/// publisher
+///   .sink(
+///     receiveCompletion: { completion in
+///       switch completion {
+///       case .finished:
+///         break
+///       case .failure(let error):
+///         print("Network error:", error)
+///       }
+///     },
+///     receiveValue: { model in
+///       print("Decoded response:", model)
+///     }
+///   )
+/// ```
 struct NetworkService: NetworkProtocol {
   private let session: URLSession
   
@@ -19,6 +38,11 @@ struct NetworkService: NetworkProtocol {
     self.session = session
   }
   
+  /// Performs a network request defined by an `APIRequest` and decodes the JSON response.
+  /// - Parameter request: An object conforming to `APIRequest`.
+  /// - Returns: An `AnyPublisher` that emits:
+  ///   - `T.Response` on success, where `T.Response` is a `Decodable` type.
+  ///   - `NetworkError` on failure.
   func perform<T: APIRequest>(_ request: T) -> AnyPublisher<T.Response, NetworkError> {
     guard var urlComponents = URLComponents(string: request.baseURL + request.path) else {
       return Fail(error: NetworkError.invalidRequest).eraseToAnyPublisher()

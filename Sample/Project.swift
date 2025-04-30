@@ -35,6 +35,22 @@ let sampleAppTarget: Target = .target(
     ]
 )
 
+// MARK: - Test Target
+
+let testTarget: Target = .target(
+    name: "TruePokemonSampleAppTests",
+    destinations: destinations,
+    product: .unitTests,
+    bundleId: bundleId + ".tests",
+    deploymentTargets: deploymentTargets,
+    infoPlist: .default,
+    sources: ["../Tests/**"],
+    dependencies: [
+        .target(name: "TruePokemonSampleApp"),
+        .external(name: "TruePokemonSDK")
+    ]
+)
+
 // MARK: - Project
 
 let project = Project(
@@ -57,12 +73,16 @@ let project = Project(
         defaultSettings: .recommended
     ),
     targets: [
-        sampleAppTarget
+        sampleAppTarget,
+        testTarget
     ],
     schemes: [
         .scheme(
           name: "TruePokemonSampleApp",
           buildAction: .buildAction(targets: ["TruePokemonSampleApp"]),
+          testAction: .targets(
+              [.testableTarget(target: .target("TruePokemonSampleAppTests"))]
+          ),
           runAction: .runAction(configuration: "Debug"),
           archiveAction: .archiveAction(configuration: "Release", revealArchiveInOrganizer: true),
           profileAction: .profileAction(configuration: "Release"),

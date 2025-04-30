@@ -1,8 +1,16 @@
+//
+//  HTTPMethod.swift
+//  TruePokemonSDK
+//
+//  Created by Enzo on 29/04/25.
+//
+
+import Combine
 import SwiftUI
 import TruePokemonSDK
 
 public struct ContentView: View {
-  private let sdk = TruePokemonSDK()
+  @EnvironmentObject var layer: TruePokemonLayer
   
   public init() {}
   
@@ -12,7 +20,7 @@ public struct ContentView: View {
         .padding()
       
       Button("Test SDK") {
-        sdk.printSomething()
+        layer.getDitto()
       }
       .padding()
     }

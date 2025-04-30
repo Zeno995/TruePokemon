@@ -10,4 +10,3 @@ protocol PokemonApiRequest: APIRequest {}
 extension PokemonApiRequest {
   var baseURL: String { "https://pokeapi.co/api" }
 }
-

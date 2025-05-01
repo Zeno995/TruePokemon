@@ -19,7 +19,7 @@ class TruePokemonLayer: ObservableObject {
   }
   
   func getDitto() {
-    client.getPokemon()
+    client.getPokemonSpriteURL(from: "Ditto")
       .receive(on: DispatchQueue.main)
       .sink { error in
       print(error)
@@ -27,24 +27,26 @@ class TruePokemonLayer: ObservableObject {
       print(pokemon)
     }
     .store(in: &cancellables)
+    
+    Task {
+      let spriteUrl = try? await client.getPokemonSpriteURL(from: "ditto")
+      print("With async await: \(String(describing: spriteUrl))")
+    }
   }
   
   func getShackespeareDitto() {
-    client.getPokemon()
+    client.getShakespeareTranslation(from: "ditto")
       .receive(on: DispatchQueue.main)
       .sink { error in
       print(error)
-    } receiveValue: { [weak self] pokemon in
-      guard let self else { return }
-      self.client.getShakespeareTranslation(from: pokemon.description ?? "")
-        .receive(on: DispatchQueue.main)
-        .sink { error in
-        print(error)
-      } receiveValue: { description in
-        print(description)
-      }
-      .store(in: &self.cancellables)
+    } receiveValue: { translation in
+      print(translation)
     }
     .store(in: &cancellables)
+    
+    Task {
+      let description = try? await client.getShakespeareTranslation(from: "ditto")
+      print("With async await: \(String(describing: description))")
+    }
   }
 }

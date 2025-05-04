@@ -45,9 +45,11 @@ let testTarget: Target = .target(
     deploymentTargets: deploymentTargets,
     infoPlist: .default,
     sources: ["../Tests/**"],
+    resources: ["../Tests/JSONs/**"],
     dependencies: [
         .target(name: "TruePokemonSampleApp"),
-        .external(name: "TruePokemonSDK")
+        .external(name: "TruePokemonSDK"),
+        .external(name: "Nimble")
     ]
 )
 

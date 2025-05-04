@@ -20,9 +20,5 @@ protocol APIRequest {
 }
 
 extension APIRequest {
-  var headers: [String: String] {
-    ["Content-Type": "application/json"]
-  }
-  var queryItems: [URLQueryItem]? { nil }
   var body: Data? { nil }
 }

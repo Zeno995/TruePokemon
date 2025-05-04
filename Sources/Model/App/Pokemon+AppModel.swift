@@ -7,12 +7,12 @@
 
 import Foundation
 
-public extension Model.App {
+extension Model.App {
   /// The pokémon model.
   struct Pokemon: Equatable {
-    public let id: Int
-    public let name: String
-    public let description: String?
-    public let imageUrl: URL?
+    let id: Int
+    let name: String
+    let description: String?
+    let imageUrl: URL?
   }
 }

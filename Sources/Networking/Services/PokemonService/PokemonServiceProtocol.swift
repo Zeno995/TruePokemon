@@ -6,6 +6,7 @@
 //
 
 import Combine
+
 extension Networking.Service {
   /// Protocol that defines network operations related to the Pokémon API.
   protocol PokemonProtocol {

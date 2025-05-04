@@ -10,7 +10,7 @@ import Foundation
 extension Model.Response {
   /// The pokémon response model, used both to merge all API responses and to parse
   /// the search API response.
-  struct Pokemon: Decodable {
+  struct Pokemon {
     let detail: Model.Response.Pokemon.Detail
     let species: Model.Response.Pokemon.Species
   }

@@ -32,6 +32,9 @@ public struct ContentView: View {
       SpriteView(name: "venusaur")
         .frame(width: 100, height: 100)
         .padding()
+      
+      ShakespeareView(name: "venusaur", isAnimated: true, isColored: true)
+        .padding()
     }
   }
 }

@@ -9,7 +9,7 @@ import Nuke
 import NukeUI
 import SwiftUI
 
-/// The `View` to show the Pokémon sprite from its name or image `URL`
+/// The `View` to show the Pokémon sprite from its name or image `URL`.
 /// Usage example:
 ///
 /// ```swift
@@ -24,10 +24,14 @@ import SwiftUI
 public struct SpriteView: View {
   @StateObject private var viewModel: SpriteViewModel
   
+  /// Creates the `View` to show the Pokémon sprite from its image `URL`.
+  /// - Parameter url: The pokémon sprite `URL`.
   public init(url: URL) {
     self._viewModel = StateObject(wrappedValue: SpriteViewModel(url: url))
   }
   
+  /// Creates the `View` to show the Pokémon sprite from its name.
+  /// - Parameter name: The pokémon name.
   public init(name: String) {
     self._viewModel = StateObject(wrappedValue: SpriteViewModel(name: name))
   }

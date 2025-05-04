@@ -5,14 +5,14 @@
 //  Created by Enzo on 04/05/25.
 //
 
-import Foundation
 import Combine
+import Foundation
 
 class SpriteViewModel: ObservableObject {
-  @Published var state: State
-  
   private var name: String?
   private var cancellables = Set<AnyCancellable>()
+  
+  @Published var state: State
   
   init(name: String) {
     self.state = .loading

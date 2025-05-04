@@ -9,6 +9,7 @@ import Combine
 import Foundation
 
 public struct TruePokemonSDK {
+  
   public init() {}
   
   /// Fetches the sprite image `URL` for a given Pokémon name.

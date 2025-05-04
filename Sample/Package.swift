@@ -15,19 +15,17 @@ let package = Package(
     ),
   ],
   dependencies: [
-    .package(name: "TruePokemon", path: ".."),
-    .package(url: "https://github.com/kean/Nuke.git", from: "10.0.0"),
+    .package(name: "TruePokemon", path: "..")
   ],
   targets: [
     .executableTarget(
       name: "TruePokemonSampleApp",
       dependencies: [
-        .product(name: "TruePokemonSDK", package: "TruePokemon"),
-        "Nuke"
+        .product(name: "TruePokemonSDK", package: "TruePokemon")
       ],
       path: "Sources",
       resources: [
-        .process("../Resources")
+        .process("Resources")
       ]
     )
   ]

@@ -70,3 +70,4 @@ Derived/
 Tuist/.build
 Sample/Tuist/.build
 Sample/.swiftpm
+.build

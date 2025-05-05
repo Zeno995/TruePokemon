@@ -9,7 +9,7 @@ import Foundation
 
 /// The TruePokemonSDK errors.
 public enum TruePokemonSDKError: Error {
-  case networkError
+  case serviceError(ServiceError)
   
   case responseError
   
@@ -17,8 +17,8 @@ public enum TruePokemonSDKError: Error {
   
   var localizedDescription: String {
     switch self {
-    case .networkError:
-      return "Network error, retry"
+    case let .serviceError(error):
+      return error.localizedDescription
       
     case .responseError:
       return "The response is incomplete, retry"

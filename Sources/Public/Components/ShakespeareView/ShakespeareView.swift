@@ -27,11 +27,9 @@ public struct ShakespeareView: View {
   }
   
   public var body: some View {
-    ZStack {
-      content
-    }
-    .animation(.easeInOut(duration: viewModel.isAnimated ? 0.5 : 0), value: viewModel.state)
-    .padding()
+    content
+      .animation(.easeInOut(duration: viewModel.isAnimated ? 0.5 : 0), value: viewModel.state)
+      .padding()
   }
   
   @ViewBuilder
@@ -44,10 +42,10 @@ public struct ShakespeareView: View {
       ProgressView()
         .progressViewStyle(CircularProgressViewStyle())
       
-    case .error:
-      Image("error", bundle: .module)
-        .resizable()
-        .scaledToFit()
+    case let .error(error):
+      Text(error.localizedDescription)
+        .foregroundColor(.red)
+        .multilineTextAlignment(.center)
     }
   }
   

@@ -34,12 +34,12 @@ class ShakespeareViewModel: ObservableObject {
       .sink(
         receiveCompletion: { [weak self] completion in
           if case .failure(let error) = completion {
-            self?.state = .error
+            self?.state = .error(error)
           }
         },
         receiveValue: { [weak self] pokemon in
           guard let description = pokemon.description else {
-            self?.state = .error
+            self?.state = .error(ServiceError.unknown)
             return
           }
           
@@ -57,7 +57,7 @@ class ShakespeareViewModel: ObservableObject {
       .sink(
         receiveCompletion: { [weak self] completion in
           if case .failure(let error) = completion {
-            self?.state = .error
+            self?.state = .error(error)
           }
         },
         receiveValue: { [weak self] response in
@@ -72,7 +72,23 @@ extension ShakespeareViewModel {
   enum State: Equatable {
     case loading
     case loaded(String)
-    case error
+    case error(ServiceError)
+    
+    static func == (lhs: ShakespeareViewModel.State, rhs: ShakespeareViewModel.State) -> Bool {
+      switch (lhs, rhs) {
+      case let (.loading, .loading):
+        return true
+        
+      case let (.loaded(lhs), .loaded(rhs)):
+        return lhs == rhs
+        
+      case let (.error(lhs), .error(rhs)):
+        return lhs.localizedDescription == rhs.localizedDescription
+        
+      default:
+        return false
+      }
+    }
   }
 }
 

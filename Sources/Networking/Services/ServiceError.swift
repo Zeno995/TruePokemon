@@ -8,17 +8,17 @@
 import Foundation
 
 /// The service errors.
-enum ServiceError: Error {
+public enum ServiceError: Error {
   case network(NetworkError)
   case unknown
   
   var localizedDescription: String {
     switch self {
     case .network(let error):
-      return "Errore di rete: \(error.localizedDescription)"
+      return error.localizedDescription
       
     case .unknown:
-      return "Errore generico"
+      return "Generic error"
     }
   }
 }

@@ -9,6 +9,7 @@ import Combine
 import Foundation
 
 public struct TruePokemonSDK {
+  
   public init() {}
   
   /// Fetches the sprite image `URL` for a given Pokémon name.
@@ -18,7 +19,7 @@ public struct TruePokemonSDK {
   public func getPokemonSpriteURL(from name: String) -> AnyPublisher<URL, TruePokemonSDKError> {
     Networking.Service.Pokemon(networkService: NetworkService())
       .detail(from: name)
-      .mapError { _ in TruePokemonSDKError.networkError }
+      .mapError { TruePokemonSDKError.serviceError($0) }
       .flatMap { pokemon in
         guard let url = pokemon.imageUrl else {
           return Fail<URL, TruePokemonSDKError>(error: TruePokemonSDKError.responseError)
@@ -65,7 +66,7 @@ public struct TruePokemonSDK {
   public func getShakespeareTranslation(from name: String) -> AnyPublisher<String, TruePokemonSDKError> {
     Networking.Service.Pokemon(networkService: NetworkService())
       .detail(from: name)
-      .mapError { _ in TruePokemonSDKError.networkError }
+      .mapError { TruePokemonSDKError.serviceError($0) }
       .flatMap { pokemon in
         guard let description = pokemon.description else {
           return Fail<String, TruePokemonSDKError>(error: TruePokemonSDKError.responseError)
@@ -74,7 +75,7 @@ public struct TruePokemonSDK {
         
         return Networking.Service.Shakespeare(networkService: NetworkService())
           .description(from: pokemon.description ?? "")
-          .mapError { _ in TruePokemonSDKError.networkError }
+          .mapError { TruePokemonSDKError.serviceError($0) }
           .map { description in
             return description.text
           }

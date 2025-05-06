@@ -7,17 +7,52 @@
 //
 
 import SwiftUI
+import TruePokemonSDK
 
 class SearchViewModel: ObservableObject {
-  @Published var query: String = ""
-  @Published var pokemonDetailViewModel: PokemonDetailViewModel?
+  @Published var query: String = "" {
+    didSet {
+      if query != oldValue {
+        errorMessage = nil
+      }
+    }
+  }
   
-  func performSearch() {
+  @Published var errorMessage: String? = nil {
+    didSet {
+      if errorMessage != nil {
+        isLoading = false
+      }
+    }
+  }
+  
+  @Published var pokemonDetailViewModel: PokemonDetailViewModel?
+  @Published var isLoading = false
+  
+  func performSearch(pokemonLayer: TruePokemonLayer) {
     guard !query.isEmpty else {
       return
     }
     
-    pokemonDetailViewModel = PokemonDetailViewModel(pokemonName: query)
+    isLoading = true
+    Task { @MainActor in
+      do {
+        guard try await pokemonLayer.verifyPokemon(from: query) else {
+          errorMessage = "Pokemon not found"
+          return
+        }
+        
+        pokemonDetailViewModel = PokemonDetailViewModel(pokemonName: query)
+        isLoading = false
+      } catch {
+        guard let truePokemonError = error as? TruePokemonSDKError else {
+          errorMessage = "Unaspected error"
+          return
+        }
+        
+        errorMessage = truePokemonError.localizedDescription
+      }
+    }
   }
   
   func clearText() {

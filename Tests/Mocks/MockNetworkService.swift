@@ -42,4 +42,6 @@ class MockNetworkService: NetworkProtocol {
         .eraseToAnyPublisher()
     }
   }
+  
+  func clearCache() {}
 }

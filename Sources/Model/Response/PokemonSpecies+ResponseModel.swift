@@ -39,5 +39,10 @@ extension Model.Response.Pokemon.Species {
       languageName = try languageContainer.decode(String.self, forKey: .name)
       text = try container.decode(String.self, forKey: .text)
     }
+    
+    init(text: String, languageName: String) {
+      self.text = text
+      self.languageName = languageName
+    }
   }
 }

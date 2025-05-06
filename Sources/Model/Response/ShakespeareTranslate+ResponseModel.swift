@@ -23,6 +23,10 @@ extension Model.Response.Shakespeare {
       let contentContainer = try container.nestedContainer(keyedBy: ContentKeys.self, forKey: .contents)
       text = try contentContainer.decode(String.self, forKey: .translated)
     }
+    
+    init(text: String) {
+      self.text = text
+    }
   }
 }
 

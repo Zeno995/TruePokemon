@@ -37,6 +37,11 @@ extension Model.Response.Pokemon.Detail {
       url = try typeContainer.decode(String.self, forKey: .url)
       name = try typeContainer.decode(String.self, forKey: .name)
     }
+    
+    init(name: String, url: String) {
+      self.name = name
+      self.url = url
+    }
   }
   
   /// The Pokémon official sprite.
@@ -60,6 +65,10 @@ extension Model.Response.Pokemon.Detail {
       let artworkContainer = try container.nestedContainer(keyedBy: OtherKeys.self, forKey: .other)
       let finalContainer = try artworkContainer.nestedContainer(keyedBy: OfficialKeys.self, forKey: .officialArtwork)
       frontDefault = try finalContainer.decode(String.self, forKey: .frontDefault)
+    }
+    
+    init(frontDefault: String) {
+      self.frontDefault = frontDefault
     }
   }
   

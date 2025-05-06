@@ -15,5 +15,8 @@ extension Networking.Service {
     /// - Returns: The pokémon detail.
     /// - Throws: NetworkError if the request fails.
     func detail(from name: String) -> AnyPublisher<Model.App.Pokemon, ServiceError>
+    
+    /// Clear all cache.
+    func clearCache()
   }
 }

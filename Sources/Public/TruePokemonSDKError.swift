@@ -13,15 +13,20 @@ public enum TruePokemonSDKError: Error {
   
   case responseError
   
+  case pokemonNotFound
+  
   case unknown
   
-  var localizedDescription: String {
+  public var localizedDescription: String {
     switch self {
     case let .serviceError(error):
       return error.localizedDescription
       
     case .responseError:
       return "The response is incomplete, retry"
+      
+    case .pokemonNotFound:
+      return "The pokémon does not exist"
       
     case .unknown:
       return "Generic error"

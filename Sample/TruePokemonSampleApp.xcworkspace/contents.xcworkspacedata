@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:../TruePokemon.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:TruePokemonSampleApp.xcodeproj">
+   </FileRef>
+   <Group
+      location = "container:"
+      name = "Dependencies">
+      <FileRef
+         location = "group:Tuist/.build/tuist-derived/CwlCatchException/CwlCatchException.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:Tuist/.build/tuist-derived/CwlPreconditionTesting/CwlPreconditionTesting.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:Tuist/.build/tuist-derived/Nimble/Nimble.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:Tuist/.build/tuist-derived/Nuke/Nuke.xcodeproj">
+      </FileRef>
+   </Group>
+</Workspace>

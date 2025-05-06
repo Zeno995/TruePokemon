@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scheme
+   LastUpgradeVersion = "1010"
+   version = "1.3">
+   <BuildAction
+      parallelizeBuildables = "YES"
+      buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "B703431663C6BFFD913AFDD3"
+               BuildableName = "CwlCatchException.framework"
+               BlueprintName = "CwlCatchException"
+               ReferencedContainer = "container:Tuist/.build/tuist-derived/CwlCatchException/CwlCatchException.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3F22134F100971F40E590EEE"
+               BuildableName = "CwlCatchExceptionSupport.framework"
+               BlueprintName = "CwlCatchExceptionSupport"
+               ReferencedContainer = "container:Tuist/.build/tuist-derived/CwlCatchException/CwlCatchException.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A9EFAE096F48975ABD891A7C"
+               BuildableName = "CwlMachBadInstructionHandler.framework"
+               BlueprintName = "CwlMachBadInstructionHandler"
+               ReferencedContainer = "container:Tuist/.build/tuist-derived/CwlPreconditionTesting/CwlPreconditionTesting.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "348E9D95506E8F146AAF9BB0"
+               BuildableName = "CwlPreconditionTesting.framework"
+               BlueprintName = "CwlPreconditionTesting"
+               ReferencedContainer = "container:Tuist/.build/tuist-derived/CwlPreconditionTesting/CwlPreconditionTesting.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FDFE4AA35E6F8AB96174A3E5"
+               BuildableName = "Nimble.framework"
+               BlueprintName = "Nimble"
+               ReferencedContainer = "container:Tuist/.build/tuist-derived/Nimble/Nimble.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E2422A308E81F018A6B17A5F"
+               BuildableName = "NimbleObjectiveC.framework"
+               BlueprintName = "NimbleObjectiveC"
+               ReferencedContainer = "container:Tuist/.build/tuist-derived/Nimble/Nimble.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "C9E0BC78A0E529700E4AF196"
+               BuildableName = "Nuke.framework"
+               BlueprintName = "Nuke"
+               ReferencedContainer = "container:Tuist/.build/tuist-derived/Nuke/Nuke.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "A8A0A0E9D5BA015F142C1008"
+               BuildableName = "NukeUI.framework"
+               BlueprintName = "NukeUI"
+               ReferencedContainer = "container:Tuist/.build/tuist-derived/Nuke/Nuke.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "3E70E936645282B7F4BA5943"
+               BuildableName = "TruePokemonSDK.framework"
+               BlueprintName = "TruePokemonSDK"
+               ReferencedContainer = "container:../TruePokemon.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "816A42D24BC9A5DAE7B1D57F"
+               BuildableName = "TruePokemonSampleApp.app"
+               BlueprintName = "TruePokemonSampleApp"
+               ReferencedContainer = "container:TruePokemonSampleApp.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "743D7646FA2E3FEA406A4304"
+               BuildableName = "TruePokemonSampleAppTests.xctest"
+               BlueprintName = "TruePokemonSampleAppTests"
+               ReferencedContainer = "container:TruePokemonSampleApp.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F3455B48B7766E0ECC2751B0"
+               BuildableName = "TruePokemon_TruePokemonSDK.bundle"
+               BlueprintName = "TruePokemon_TruePokemonSDK"
+               ReferencedContainer = "container:../TruePokemon.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
+   </BuildAction>
+   <TestAction
+      buildConfiguration = "Debug"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      shouldUseLaunchSchemeArgsEnv = "YES">
+      <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "743D7646FA2E3FEA406A4304"
+               BuildableName = "TruePokemonSampleAppTests.xctest"
+               BlueprintName = "TruePokemonSampleAppTests"
+               ReferencedContainer = "container:TruePokemonSampleApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+      </Testables>
+   </TestAction>
+   <LaunchAction
+      buildConfiguration = "Debug"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      launchStyle = "0"
+      useCustomWorkingDirectory = "NO"
+      ignoresPersistentStateOnLaunch = "NO"
+      debugDocumentVersioning = "YES"
+      debugServiceExtension = "internal"
+      allowLocationSimulation = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "B703431663C6BFFD913AFDD3"
+            BuildableName = "CwlCatchException.framework"
+            BlueprintName = "CwlCatchException"
+            ReferencedContainer = "container:Tuist/.build/tuist-derived/CwlCatchException/CwlCatchException.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+   </LaunchAction>
+   <ProfileAction
+      buildConfiguration = "Release"
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      savedToolIdentifier = ""
+      useCustomWorkingDirectory = "NO"
+      debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "B703431663C6BFFD913AFDD3"
+            BuildableName = "CwlCatchException.framework"
+            BlueprintName = "CwlCatchException"
+            ReferencedContainer = "container:Tuist/.build/tuist-derived/CwlCatchException/CwlCatchException.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+   </ProfileAction>
+   <AnalyzeAction
+      buildConfiguration = "Debug">
+   </AnalyzeAction>
+   <ArchiveAction
+      buildConfiguration = "Release"
+      revealArchiveInOrganizer = "YES">
+   </ArchiveAction>
+</Scheme>

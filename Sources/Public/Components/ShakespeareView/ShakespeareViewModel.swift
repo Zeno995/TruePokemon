@@ -9,17 +9,12 @@ import Combine
 import Foundation
 
 class ShakespeareViewModel: ObservableObject {
-  private var name: String?
   private var cancellables = Set<AnyCancellable>()
   
   @Published var state: State
-  var isColored: Bool
-  var isAnimated: Bool
   
-  init(name: String, isAnimated: Bool, isColored: Bool) {
+  init(name: String) {
     self.state = .loading
-    self.isAnimated = isAnimated
-    self.isColored = isColored
     loadDescriptionFrom(name: name)
   }
   

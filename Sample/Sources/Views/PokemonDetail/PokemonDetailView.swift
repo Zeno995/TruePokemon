@@ -47,11 +47,9 @@ struct PokemonDetailView: View {
           .font(.title2)
           .frame(maxWidth: .infinity, alignment: .leading)
         
-        ShakespeareView(
-          name: viewModel.pokemonName,
-          isAnimated: true,
-          isColored: true
-        )
+        ShakespeareView(name: viewModel.pokemonName)
+          .isColored(true)
+          .isAnimated(true)
       }
       
       Spacer()

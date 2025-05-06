@@ -15,6 +15,10 @@ import SwiftUI
 /// ```
 ///
 public struct ShakespeareView: View {
+  let isAnimated: Bool
+  let isColored: Bool
+  let name: String
+  
   @StateObject private var viewModel: ShakespeareViewModel
   
   /// Creates the `View` to show the Shakespeare version of Pokémon description.
@@ -22,15 +26,25 @@ public struct ShakespeareView: View {
   ///   - name: The pokémon name.
   ///   - isAnimated: Whether the view is animated or not.
   ///   - isColored: Whether the view is colored or not.
-  public init(name: String, isAnimated: Bool = false, isColored: Bool = false) {
-    self._viewModel = StateObject(wrappedValue: ShakespeareViewModel(name: name, isAnimated: isAnimated, isColored: isColored))
+  public init(name: String) {
+    self._viewModel = StateObject(wrappedValue: ShakespeareViewModel(name: name))
+    self.isAnimated = false
+    self.isColored = false
+    self.name = name
+  }
+  
+  private init(name: String, isAnimated: Bool = false, isColored: Bool = false) {
+    self._viewModel = StateObject(wrappedValue: ShakespeareViewModel(name: name))
+    self.isAnimated = isAnimated
+    self.isColored = isColored
+    self.name = name
   }
   
   public var body: some View {
     ZStack {
       content
     }
-    .animation(.easeInOut(duration: viewModel.isAnimated ? 0.5 : 0), value: viewModel.state)
+    .animation(.easeInOut(duration: isAnimated ? 0.5 : 0), value: viewModel.state)
   }
   
   @ViewBuilder
@@ -52,7 +66,7 @@ public struct ShakespeareView: View {
   
   private func textContent(_ text: String) -> some View {
     Text(text)
-      .foregroundColor(viewModel.isColored ? .white : .black)
+      .foregroundColor(isColored ? .white : .black)
       .padding()
       .background(textBackground)
       .cornerRadius(16)
@@ -62,7 +76,7 @@ public struct ShakespeareView: View {
   
   @ViewBuilder
   private var textBackground: some View {
-    if viewModel.isColored {
+    if isColored {
       LinearGradient(
         gradient: Gradient(colors: [Color.purple, Color.blue]),
         startPoint: .topLeading,
@@ -80,7 +94,7 @@ public struct ShakespeareView: View {
   
   @ViewBuilder
   private var textOverlay: some View {
-    if viewModel.isColored {
+    if isColored {
       RoundedRectangle(cornerRadius: 16)
         .stroke(
           LinearGradient(
@@ -93,5 +107,27 @@ public struct ShakespeareView: View {
     } else {
       EmptyView()
     }
+  }
+  
+  /// Builder function to enable or disable animations.
+  /// - Parameter animated: Whether the view is animated or not.
+  /// - Returns: A new `ShakespeareView` configured for animation.
+  public func isAnimated(_ animated: Bool) -> ShakespeareView {
+    ShakespeareView(
+      name: name,
+      isAnimated: animated,
+      isColored: isColored
+    )
+  }
+  
+  /// Builder function to enable or disable coloring.
+  /// - Parameter colored: Whether the view is colored or not.
+  /// - Returns: A new `ShakespeareView` configured for coloring.
+  public func isColored(_ colored: Bool) -> ShakespeareView {
+    ShakespeareView(
+      name: name,
+      isAnimated: isAnimated,
+      isColored: colored
+    )
   }
 }

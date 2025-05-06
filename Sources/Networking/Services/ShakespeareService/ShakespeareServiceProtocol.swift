@@ -15,5 +15,8 @@ extension Networking.Service {
     /// - Returns: The shakespeare object.
     /// - Throws: NetworkError if the request fails.
     func description(from text: String) -> AnyPublisher<Model.App.Shakespeare.Translate, ServiceError>
+    
+    /// Clear all cache.
+    func clearCache()
   }
 }

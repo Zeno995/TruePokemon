@@ -27,5 +27,9 @@ extension Networking.Service {
         }
         .eraseToAnyPublisher()
     }
+    
+    func clearCache() {
+      networkService.clearCache()
+    }
   }
 }

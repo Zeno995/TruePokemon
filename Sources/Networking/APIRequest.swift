@@ -17,8 +17,12 @@ protocol APIRequest {
   var headers: [String: String] { get }
   var queryItems: [URLQueryItem]? { get }
   var body: Data? { get }
+  var useCache: Bool { get }
+  var cacheExpirationInterval: TimeInterval { get }
 }
 
 extension APIRequest {
   var body: Data? { nil }
+  var useCache: Bool { true }
+  var cacheExpirationInterval: TimeInterval { 3600 }
 }

@@ -33,9 +33,16 @@ import Foundation
 /// ```
 struct NetworkService: NetworkProtocol {
   private let session: URLSession
+  private let cache: NetworkCache
   
-  init(session: URLSession = .shared) {
+  init(session: URLSession = .shared, cache: NetworkCache = NetworkCache()) {
     self.session = session
+    self.cache = cache
+  }
+  
+  /// Clean all caches.
+  func clearCache() {
+    cache.clearCache()
   }
   
   /// Performs a network request defined by an `APIRequest` and decodes the JSON response.
@@ -74,6 +81,22 @@ struct NetworkService: NetworkProtocol {
       urlRequest.addValue(value, forHTTPHeaderField: key)
     }
     
+    if request.useCache {
+      if let cachedData = cache.retrieveFromCache(for: url, bodyData: urlRequest.httpBody) {
+        do {
+          let decoder = JSONDecoder()
+          decoder.dateDecodingStrategy = .iso8601
+          let decodedResponse = try decoder.decode(T.Response.self, from: cachedData)
+          
+          return Just(decodedResponse)
+            .setFailureType(to: NetworkError.self)
+            .eraseToAnyPublisher()
+        } catch {
+          print("Cache coding error: \(error.localizedDescription)")
+        }
+      }
+    }
+    
     return session.dataTaskPublisher(for: urlRequest)
       .mapError { NetworkError.unknown($0) }
       .flatMap { data, response -> AnyPublisher<T.Response, NetworkError> in
@@ -83,6 +106,10 @@ struct NetworkService: NetworkProtocol {
         
         guard (200...299).contains(httpResponse.statusCode) else {
           return Fail(error: NetworkError.requestFailed(statusCode: httpResponse.statusCode)).eraseToAnyPublisher()
+        }
+        
+        if request.useCache {
+          cache.saveToCache(data: data, for: url, bodyData: urlRequest.httpBody, expirationInterval: request.cacheExpirationInterval)
         }
         
         do {

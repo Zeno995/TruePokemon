@@ -12,8 +12,10 @@ import SwiftUI
 struct TruePokemonApp: App {
   var body: some Scene {
     WindowGroup {
-      ContentView()
-        .environmentObject(TruePokemonLayer(client: TruePokemonSDK()))
+      NavigationView {
+        SearchView()
+          .environmentObject(TruePokemonLayer(client: TruePokemonSDK()))
+      }
     }
   }
 }

@@ -27,9 +27,10 @@ public struct ShakespeareView: View {
   }
   
   public var body: some View {
-    content
-      .animation(.easeInOut(duration: viewModel.isAnimated ? 0.5 : 0), value: viewModel.state)
-      .padding()
+    ZStack {
+      content
+    }
+    .animation(.easeInOut(duration: viewModel.isAnimated ? 0.5 : 0), value: viewModel.state)
   }
   
   @ViewBuilder
@@ -57,7 +58,6 @@ public struct ShakespeareView: View {
       .cornerRadius(16)
       .overlay(textOverlay)
       .shadow(color: .black.opacity(0.25), radius: 10, x: 0, y: 5)
-      .padding()
   }
   
   @ViewBuilder

@@ -63,7 +63,7 @@ public struct SpriteView: View {
         .progressViewStyle(CircularProgressViewStyle())
       
     case .error:
-      Image("error", bundle: .sdk)
+      Image("error", bundle: .module)
         .resizable()
         .scaledToFit()
     }
@@ -79,7 +79,7 @@ public struct SpriteView: View {
         .resizable()
         .scaledToFit()
     } else {
-      Image("error", bundle: .sdk)
+      Image("error", bundle: .module)
         .resizable()
         .scaledToFit()
     }

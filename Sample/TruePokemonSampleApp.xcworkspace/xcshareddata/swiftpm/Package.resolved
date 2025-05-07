@@ -1,16 +1,1 @@
-{
-  "object": {
-    "pins": [
-      {
-        "package": "Nuke",
-        "repositoryURL": "https://github.com/kean/Nuke.git",
-        "state": {
-          "branch": null,
-          "revision": "0ead44350d2737db384908569c012fe67c421e4d",
-          "version": "12.8.0"
-        }
-      }
-    ]
-  },
-  "version": 1
-}
+/Users/enzocorsiero/TruePokemon/Sample/.package.resolved

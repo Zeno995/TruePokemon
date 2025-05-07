@@ -25,7 +25,11 @@ A sample iOS application that demonstrates how to use the TruePokemonSDK to disp
 - Xcode 14.0+
 - [Tuist](https://tuist.io) for project management
 
-## Project Management with Tuist
+## Project Management with Setup file
+
+ You can use `sh setup.sh` command to install dependencies and generate the xcode project, the `setup.sh` also install `Tuist` via `Mise`(installing also `Mise` is it is not present), **to run it you have installed Homebrew on your mac.**
+
+## Use Tuist with command line
 
 This project is managed using [Tuist](https://tuist.io), a tool that helps with maintaining Xcode projects. Tuist makes it easier to define, generate, and update the project structure.
 
@@ -50,8 +54,6 @@ In the project root directory, you can use the following Tuist commands:
   ```bash
   tuist generate
   ```
-
-  (You can also use `sh setup.sh` command to install dependencies and generate the xcode project)
 
 - Edit the project definition:
   ```bash

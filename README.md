@@ -208,6 +208,21 @@ struct ContentView: View {
 }
 ```
 
+## Error Handling
+
+The SDK provides comprehensive error handling through `TruePokemonSDKError`:
+
+```swift
+public enum TruePokemonSDKError: Error {
+    case pokemonNotFound
+    case serviceError(Networking.ServiceError)
+    case responseError
+    case unknown
+}
+```
+
+## Architecture
+
 ### Public Layer
 Exposes the public API and UI components:
 - `TruePokemonSDK.swift`: Main entry point for the SDK.
@@ -225,19 +240,6 @@ Defines data models used internally by the SDK, with clear separation between:
 - Response models: Direct mappings from API responses and normalized in app models.
 - App models: Domain models used within the SDK.
 
-## Error Handling
-
-The SDK provides comprehensive error handling through `TruePokemonSDKError`:
-
-```swift
-public enum TruePokemonSDKError: Error {
-    case pokemonNotFound
-    case serviceError(Networking.ServiceError)
-    case responseError
-    case unknown
-}
-```
-
 This allows for precise identification and handling of different errors that may occur when using the SDK.
 
 ## API References
@@ -250,3 +252,8 @@ The SDK uses the following external APIs:
 
 - [Nuke](https://github.com/kean/Nuke): For efficient image loading and caching
 - [NukeUI](https://github.com/kean/NukeUI): For SwiftUI integration with Nuke
+
+## Notes
+
+- The xcodeproj, the .xcworkspace and the Derived folders are pushed on git only for test project, so you can run it without run tuist or `setup.sh` file.
+- Usally for Unit tests i use Nimble, but i wrote `PokemonServiceTest` without Nimble usage in order to show you my `XCTest` skills.

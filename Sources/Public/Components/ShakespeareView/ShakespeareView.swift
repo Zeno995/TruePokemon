@@ -22,10 +22,7 @@ public struct ShakespeareView: View {
   @StateObject private var viewModel: ShakespeareViewModel
   
   /// Creates the `View` to show the Shakespeare version of Pokémon description.
-  /// - Parameters:
-  ///   - name: The pokémon name.
-  ///   - isAnimated: Whether the view is animated or not.
-  ///   - isColored: Whether the view is colored or not.
+  /// - Parameter name: The pokémon name.
   public init(name: String) {
     self._viewModel = StateObject(wrappedValue: ShakespeareViewModel(name: name))
     self.isAnimated = false

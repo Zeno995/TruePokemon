@@ -325,8 +325,8 @@
 			buildPhases = (
 				CC474FE7FEE3BEC75078DEB5 /* Sources */,
 				53F5111B4B64310D00DBE961 /* Resources */,
-				CAD0F02245689E6B82779002 /* Frameworks */,
 				2732091706EBD653AEAE8334 /* Embed Frameworks */,
+				CAD0F02245689E6B82779002 /* Frameworks */,
 				93E386A54A1DE97FF0316DD3 /* Dependencies */,
 			);
 			buildRules = (
@@ -347,8 +347,8 @@
 			buildPhases = (
 				E3B5119DA99D58C90643E55F /* Sources */,
 				B683A77D8CB7390EEAD3C7DC /* Resources */,
-				83328940037CDBA67FCC467C /* Frameworks */,
 				EBC772AF3983990E8C0DBBAB /* Embed Frameworks */,
+				83328940037CDBA67FCC467C /* Frameworks */,
 				5BDEC7800614B1187C250C10 /* Dependencies */,
 			);
 			buildRules = (
@@ -385,9 +385,6 @@
 				en,
 			);
 			mainGroup = 79E99A4CF968F1174329E868;
-			packageReferences = (
-				4EA1BEE221A2B73BBF7F63A5 /* XCLocalSwiftPackageReference "/Users/enzocorsiero/TruePokemon" */,
-			);
 			productRefGroup = 048C754BEEDA7DAD474F4B2E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -581,6 +578,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(inherited)",
 					"$(SRCROOT)/Tuist/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include",
 					"$(SRCROOT)/Tuist/.build/checkouts/CwlPreconditionTesting/Sources/CwlMachBadInstructionHandler/include",
 					"$(SRCROOT)/Tuist/.build/checkouts/Nimble/Sources/NimbleObjectiveC/include",
@@ -630,7 +628,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Derived/InfoPlists/TruePokemonSampleApp-Info.plist";
@@ -662,6 +659,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
 					"$(inherited)",
 					"$(SRCROOT)/Tuist/.build/checkouts/CwlCatchException/Sources/CwlCatchExceptionSupport/include",
 					"$(SRCROOT)/Tuist/.build/checkouts/CwlPreconditionTesting/Sources/CwlMachBadInstructionHandler/include",
@@ -708,7 +706,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Derived/InfoPlists/TruePokemonSampleApp-Info.plist";
@@ -761,13 +758,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCLocalSwiftPackageReference section */
-		4EA1BEE221A2B73BBF7F63A5 /* XCLocalSwiftPackageReference "/Users/enzocorsiero/TruePokemon" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = /Users/enzocorsiero/TruePokemon;
-		};
-/* End XCLocalSwiftPackageReference section */
 	};
 	rootObject = 25EACD063FB782A686BE0745 /* Project object */;
 }

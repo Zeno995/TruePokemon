@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/bin/bash 
+
+PROJECT_NAME="TruePokemonSampleApp"
 
 # Install Mise, if not installed.
 if ! brew ls --versions mise > /dev/null 2>&1; then
@@ -14,6 +16,7 @@ fi
 
 # Delete current Xcode Project.
 rm -rf $PROJECT_NAME.xcodeproj
+rm -rf $PROJECT_NAME.xcworkspace
 
 # Generate the tuist project.
 mise x -- tuist install
